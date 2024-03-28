@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+	char path[80] = "D:/TEACHING/CMP164_ProgrammingTechniques - K20/codes/FilePath/";
+//	char textFile[100];
+//	strcpy(textFile, path) ;
+//	strcat(textFile, "20DTHQB1.txt");
+//	printf("\nTextFile: %s\n", textFile);
+//	
+//	FILE *fText = fopen(textFile, "w");
+//	if(fText != NULL){
+//		int N = 1000000;
+//		fprintf(fText, "%d", N);
+//		fclose(fText);
+//	}
+//	else{
+//		printf("Text File open fail.");
+//	}
+	
+	char binFile[100];
+	strcpy(binFile, path);
+	strcat(binFile, "20DTHQB1.bin");
+	printf("\nBinary file: %s\n", binFile);
+	FILE *fBin = fopen(binFile, "wb");
+	if(fBin != NULL){
+		int N = 1000000;
+		fwrite(&N, 1, sizeof(int), fBin);
+		fclose(fBin);
+	}
+	else{
+		printf("Binary File open fail.");
+	}
+	
+	FILE *f = fopen(binFile, "rb");
+	if(f != NULL){
+		int N;
+		fread(&N, 1, sizeof(int), f);
+		printf("N = %d", N);
+		fclose(f);
+	}
+	else{
+		printf("Read binary file fail");
+	}
+	
+	return 0;
+}

@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+	char filename[100] = "D:/TEACHING/CMP164_ProgrammingTechniques - K20/codes/FilePath/";
+	strcat(filename, "20DTHQB1_out.txt");
+	printf("\n%s\n", filename);
+	
+	FILE *fWrite = fopen(filename, "w");
+	if(fWrite != NULL){
+		int N, A[10];
+		printf("Input N = "); scanf("%d", &N);
+		for(int i = 0; i < N; i++){
+			printf("A[%d] = ", i);
+			scanf("%d", &A[i]);
+		}
+		fprintf(fWrite, "%d\n", N);
+		for(int i = 0; i < N; i++)
+			fprintf(fWrite, "%d ", A[i]);
+		// Close file
+		fclose(fWrite);
+	}
+	else{
+		printf("File open fail.");
+	}
+	
+	// Open file
+	FILE *fRead = fopen(filename, "r");
+	if(fRead != NULL){
+		int N, A[10];
+		fscanf(fRead, "%d", &N);
+		for(int i = 0; i < N; i++){
+			fscanf(fRead, "%d", &A[i]);
+		}
+		printf("\nArray from file is A[%d]: ", N);
+		for(int i = 0; i < N; i++)
+			printf("%d ", A[i]);
+		// Close file
+		fclose(fRead);
+	}
+	else{
+		printf("File open fail.");
+	}
+	
+	return 0;
+}
