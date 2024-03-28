@@ -1,0 +1,9 @@
+Problems: Write a program
+
+Input scores of a student, Alice, given the number of courses N which has been taken. Note: 1 ≤N ≤ 30 and 0 ≤ score ≤ 10.
+
+Print out all scores of Alice.
+
+Compute the average score of Alice.
+
+Count the number of courses that Alice has passed/failed, given that a course is passed if score >=5.
