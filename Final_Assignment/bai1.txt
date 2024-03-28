@@ -1,0 +1,28 @@
+int product_of_a_week[7][4] = {
+{12,3,11,6,13},
+{12,3,11,6,13},
+}
+
+char* day[7] = {"Monday", "tue"}
+
+int x[] = {}
+
+day[0]
+
+void print_row(char* day_t, int[4] product_t)
+{
+	printf("%c/t/t/t%d/t%d", day_t, );
+}
+
+
+print_row("monday", product_of_week[0]);
+print_row("monday", product_of_week[0]);
+print_row("monday", product_of_week[0]);
+print_row("monday", product_of_week[0]);
+print_row("monday", product_of_week[0]);
+
+
+for(i = 0,...)
+{
+	print_row(day[i]), prodd[i]
+}
